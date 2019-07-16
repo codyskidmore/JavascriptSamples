@@ -71,4 +71,8 @@ console.log(Number('hello')); // NaN
 console.log(Number([1,2,3])); // NaN
 console.log(parseInt('11')); // 11
 console.log(parseInt('11.11')); // 11
-console.log(parseFloat('11.11')); // 11.11
+console.log(parseFloat('11.10')); // 11.1
+console.log(parseFloat('11.10').toFixed(2)); // 11.10
+
+// Type coercion
+
