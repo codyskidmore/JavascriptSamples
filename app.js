@@ -75,4 +75,8 @@ console.log(parseFloat('11.10')); // 11.1
 console.log(parseFloat('11.10').toFixed(2)); // 11.10
 
 // Type coercion
-
+const val3 = String(5);
+const val4 = 6;
+const sum = val3 + val4;
+console.log(sum); // "56" => converts to string no matter the order.
+console.log(typeof sum);
