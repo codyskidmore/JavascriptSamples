@@ -25,3 +25,14 @@ console.log(person.firstName); // Bob
 console.log(person.getBirthYear()); // March
 console.log(person.adderss.state); // California
 
+// Array of object literals
+const people = [
+  {name: 'Bob', age: 30},
+  {name: 'Joyce', age: 29}
+];
+
+console.log(people);
+
+people.forEach(person => {
+  console.log(person.name); // Bob, Joyce
+});
