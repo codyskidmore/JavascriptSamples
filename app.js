@@ -29,3 +29,6 @@ console.warn('this is a warning');
 console.time('Hello');
 sleep(1000);
 console.timeEnd('Hello');
+
+document.querySelector('h1').style.color = 'red';
+//Also document.querySelectorAll('h1')
