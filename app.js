@@ -24,6 +24,8 @@ class Colors {
 }
 
 const color = Colors.RED.name;
+Colors.RED.name = 'TEST';
+console.log(Colors.RED.name); // setting it has no affect!
 
 switch(color)
 {
