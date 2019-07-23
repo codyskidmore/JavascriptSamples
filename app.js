@@ -5,8 +5,32 @@ class MouseEvents{
     static Click(){
         return 'click';
     }
+    static DoubleClick(){
+        return 'dblclick';
+    }
     static MouseOver(){
         return 'mouseover';
+    }
+    static MouseDown(){
+        return 'mousedown';
+    }
+    static MouseUp(){
+        return 'mouseup';
+    }
+    static MouseEnter(){
+        return 'mouseenter';
+    }
+    static MouseLeave(){
+        return 'mouseleave';
+    }
+    static MouseOver(){
+        return 'mouseover';
+    }
+    static MouseOut(){
+        return 'mouseout';
+    }
+    static MouseMove(){
+        return 'mousemove';
     }
 }
 
