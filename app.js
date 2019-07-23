@@ -1,6 +1,15 @@
 const title = "Const/Enum pseudo types";
 document.title = title;
 
+class MouseEvents{
+    static Click(){
+        return 'click';
+    }
+    static MouseOver(){
+        return 'mouseover';
+    }
+}
+
 // Node Types
 class NodeTypes{
     static get Element(){
