@@ -1,6 +1,48 @@
 const title = "Const/Enum pseudo types";
 document.title = title;
 
+class FormEvents {
+    static Submit(){
+        return 'submit';
+    }
+}
+
+class InputEvents {
+    static Input(){
+        return 'input';
+    }
+    static Change(){
+        return 'change';
+    }
+    static Focus(){
+        return 'focus';
+    }
+    static Blur(){
+        return 'blur';
+    }
+    static Cut(){
+        return 'cut';
+    }
+    static Copy(){
+        return 'copy';
+    }
+    static Paste(){
+        return 'paste';
+    }
+}
+
+class KeyboardEvents {
+    static KeyDown(){
+        return 'keydown';
+    }
+    static KeyUp(){
+        return 'keyup';
+    }
+    static KeyPress(){
+        return 'keypress';
+    }
+}
+
 class MouseEvents{
     static Click(){
         return 'click';
@@ -34,7 +76,6 @@ class MouseEvents{
     }
 }
 
-// Node Types
 class NodeTypes{
     static get Element(){
         return 1;
