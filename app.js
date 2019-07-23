@@ -1,78 +1,97 @@
-const title = "Const/Enum pseudo types";
+const title = "Keyboard & Input Events";
 document.title = title;
 
-class MouseEvents{
-    static Click(){
-        return 'click';
+class FormEvents {
+    static Submit(){
+        return 'submit';
     }
-    static DoubleClick(){
-        return 'dblclick';
+}
+class InputEvents {
+    static Input(){
+        return 'input';
     }
-    static MouseOver(){
-        return 'mouseover';
+    static Change(){
+        return 'change';
     }
-    static MouseDown(){
-        return 'mousedown';
+    static Focus(){
+        return 'focus';
     }
-    static MouseUp(){
-        return 'mouseup';
+    static Blur(){
+        return 'blur';
     }
-    static MouseEnter(){
-        return 'mouseenter';
+    static Cut(){
+        return 'cut';
     }
-    static MouseLeave(){
-        return 'mouseleave';
+    static Copy(){
+        return 'copy';
     }
-    static MouseOver(){
-        return 'mouseover';
-    }
-    static MouseOut(){
-        return 'mouseout';
-    }
-    static MouseMove(){
-        return 'mousemove';
+    static Paste(){
+        return 'paste';
     }
 }
 
-// Node Types
-class NodeTypes{
-    static get Element(){
-        return 1;
+class KeyboardEvents {
+    static KeyDown(){
+        return 'keydown';
     }
-    static get Attribute(){
-        return 2;
+    static KeyUp(){
+        return 'keyup';
     }
-    static get TextNode(){
-        return 3;
-    }
-    static get Comment(){
-        return 4;
-    }
-    static get Document(){
-        return 5;
-    }
-    static get DocumentType(){
-        return 6;
+    static KeyPress(){
+        return 'keypress';
     }
 }
 
-class Colors {
-    static get Red(){
-        return {
-            name: 'red',
-            hex: '#f00'
-        }
-    }
-    static get Blue(){
-        return {
-            name: 'blue',
-            hex: '#00f'
-        }
-    }
-    static get Green(){
-        return {
-            name: 'green',
-            hex: '#0f0'
-        }
+////// Input events.
+const form = document.querySelector('#task-form');
+const taskInput = document.querySelector('#task-input');
+const taskTitle = document.querySelector('#task-title');
+// Clear input
+taskInput.value = '';
+
+function inputRunEvent(e){
+    console.log(e.target.querySelector('input').value);
+    console.log(`Event Type: ${e.type}`);
+    e.preventDefault();
+}
+
+form.addEventListener(FormEvents.Submit(), inputRunEvent);
+
+////// Keyboard events
+
+function keyboardRunEvent(e){
+    console.log(`Key: ${e.key}, Key Code: ${e.keyCode}`);
+    console.log(`Event Type: ${e.type}`);
+    console.log(e);
+    taskTitle.innerText = `Tasks (${e.target.value})`;
+}
+
+// taskInput.addEventListener(KeyboardEvents.KeyDown(), keyboardRunEvent);
+// taskInput.addEventListener(KeyboardEvents.KeyUp(), keyboardRunEvent);
+// taskInput.addEventListener(KeyboardEvents.KeyPress(), keyboardRunEvent);
+// taskInput.addEventListener(InputEvents.Focus(), inputRunEvent);
+// taskInput.addEventListener(InputEvents.Blur(), inputRunEvent);
+
+/////// Input events
+function inputRunEvent(e){
+    console.log(`Event Type: ${e.type}`);
+    console.log(`Target: ${e.target.id}`);
+    console.log(`Target: ${e.target.value}`);
+}
+
+function detectUndoEvent(e){
+    if (e.ctrlKey && e.code === 'KeyZ'){
+        console.log('Undo event detected');
+        console.log(e.target);
     }
 }
+
+// Set globally but can target a specific input.
+document.addEventListener(KeyboardEvents.KeyDown(), detectUndoEvent);
+document.addEventListener(InputEvents.Cut(), inputRunEvent);
+document.addEventListener(InputEvents.Copy(), inputRunEvent);
+document.addEventListener(InputEvents.Paste(), inputRunEvent);
+document.addEventListener(InputEvents.Input(), inputRunEvent);
+
+const select = document.querySelector('#select-test'); // Must disable reference to materialize stylesheet to make this part work..
+select.addEventListener(InputEvents.Change(), inputRunEvent);
